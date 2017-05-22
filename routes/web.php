@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/logger', 'LoggingController@store');
+
+//Route::any('/logger', function(\Illuminate\Http\Request $request) {
+//    \Log::info(json_encode($request->all()));
+//});

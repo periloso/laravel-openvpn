@@ -1,0 +1,710 @@
+{
+  "apiKey": "1234567890",
+  "notifier": {
+    "name": "Bugsnag Laravel",
+    "version": "2.5.0",
+    "url": "https:\/\/github.com\/bugsnag\/bugsnag-laravel"
+  },
+  "events": [{
+    "app": {
+      "type": "HTTP",
+      "releaseStage": "local"
+    },
+    "device": {
+      "time": "2017-05-22T14:05:14Z",
+      "hostname": "bugger"
+    },
+    "user": {
+      "id": "192.168.10.1"
+    },
+    "context": "GET \/",
+    "payloadVersion": "3",
+    "severity": "error",
+    "exceptions": [{
+      "errorClass": "ErrorException",
+      "message": "Division by zero",
+      "stacktrace": [{
+        "lineNumber": 15,
+        "method": "Illuminate\\Foundation\\Bootstrap\\HandleExceptions::handleError",
+        "code": {
+          "12": "*\/",
+          "13": null,
+          "14": "Route::get('\/', function () {",
+          "15": "return 10\/0;",
+          "16": "return view('welcome');",
+          "17": "});",
+          "18": null
+        },
+        "inProject": false,
+        "file": "routes\/web.php"
+      }, {
+        "lineNumber": 15,
+        "method": "Illuminate\\Routing\\Router::{closure}",
+        "code": {
+          "12": "*\/",
+          "13": null,
+          "14": "Route::get('\/', function () {",
+          "15": "return 10\/0;",
+          "16": "return view('welcome');",
+          "17": "});",
+          "18": null
+        },
+        "inProject": false,
+        "file": "routes\/web.php"
+      }, {
+        "lineNumber": 189,
+        "method": "Illuminate\\Routing\\Route::runCallable",
+        "code": {
+          "186": "$callable = $this->action['uses'];",
+          "187": null,
+          "188": "return $callable(...array_values($this->resolveMethodDependencies(",
+          "189": "$this->parametersWithoutNulls(), new ReflectionFunction($this->action['uses'])",
+          "190": ")));",
+          "191": "}",
+          "192": null
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php"
+      }, {
+        "lineNumber": 163,
+        "method": "Illuminate\\Routing\\Route::run",
+        "code": {
+          "160": "return $this->runController();",
+          "161": "}",
+          "162": null,
+          "163": "return $this->runCallable();",
+          "164": "} catch (HttpResponseException $e) {",
+          "165": "return $e->getResponse();",
+          "166": "}"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php"
+      }, {
+        "lineNumber": 559,
+        "method": "Illuminate\\Routing\\Router::Illuminate\\Routing\\{closure}",
+        "code": {
+          "556": "->through($middleware)",
+          "557": "->then(function ($request) use ($route) {",
+          "558": "return $this->prepareResponse(",
+          "559": "$request, $route->run()",
+          "560": ");",
+          "561": "});",
+          "562": "}"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php"
+      }, {
+        "lineNumber": 30,
+        "method": "Illuminate\\Routing\\Pipeline::Illuminate\\Routing\\{closure}",
+        "code": {
+          "27": "{",
+          "28": "return function ($passable) use ($destination) {",
+          "29": "try {",
+          "30": "return $destination($passable);",
+          "31": "} catch (Exception $e) {",
+          "32": "return $this->handleException($passable, $e);",
+          "33": "} catch (Throwable $e) {"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php"
+      }, {
+        "lineNumber": 41,
+        "method": "Illuminate\\Routing\\Middleware\\SubstituteBindings::handle",
+        "code": {
+          "38": null,
+          "39": "$this->router->substituteImplicitBindings($route);",
+          "40": null,
+          "41": "return $next($request);",
+          "42": "}",
+          "43": "}",
+          "44": null
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php"
+      }, {
+        "lineNumber": 148,
+        "method": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}",
+        "code": {
+          "145": "$parameters = [$passable, $stack];",
+          "146": "}",
+          "147": null,
+          "148": "return $pipe->{$this->method}(...$parameters);",
+          "149": "};",
+          "150": "};",
+          "151": "}"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php"
+      }, {
+        "lineNumber": 53,
+        "method": "Illuminate\\Routing\\Pipeline::Illuminate\\Routing\\{closure}",
+        "code": {
+          "50": null,
+          "51": "$callable = $slice($stack, $pipe);",
+          "52": null,
+          "53": "return $callable($passable);",
+          "54": "} catch (Exception $e) {",
+          "55": "return $this->handleException($passable, $e);",
+          "56": "} catch (Throwable $e) {"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php"
+      }, {
+        "lineNumber": 65,
+        "method": "Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken::handle",
+        "code": {
+          "62": "$this->inExceptArray($request) ||",
+          "63": "$this->tokensMatch($request)",
+          "64": ") {",
+          "65": "return $this->addCookieToResponse($request, $next($request));",
+          "66": "}",
+          "67": null,
+          "68": "throw new TokenMismatchException;"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/VerifyCsrfToken.php"
+      }, {
+        "lineNumber": 148,
+        "method": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}",
+        "code": {
+          "145": "$parameters = [$passable, $stack];",
+          "146": "}",
+          "147": null,
+          "148": "return $pipe->{$this->method}(...$parameters);",
+          "149": "};",
+          "150": "};",
+          "151": "}"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php"
+      }, {
+        "lineNumber": 53,
+        "method": "Illuminate\\Routing\\Pipeline::Illuminate\\Routing\\{closure}",
+        "code": {
+          "50": null,
+          "51": "$callable = $slice($stack, $pipe);",
+          "52": null,
+          "53": "return $callable($passable);",
+          "54": "} catch (Exception $e) {",
+          "55": "return $this->handleException($passable, $e);",
+          "56": "} catch (Throwable $e) {"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php"
+      }, {
+        "lineNumber": 49,
+        "method": "Illuminate\\View\\Middleware\\ShareErrorsFromSession::handle",
+        "code": {
+          "46": "\/\/ assume that some errors are always available, which is convenient since",
+          "47": "\/\/ they don't have to continually run checks for the presence of errors.",
+          "48": null,
+          "49": "return $next($request);",
+          "50": "}",
+          "51": "}",
+          "52": null
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/View\/Middleware\/ShareErrorsFromSession.php"
+      }, {
+        "lineNumber": 148,
+        "method": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}",
+        "code": {
+          "145": "$parameters = [$passable, $stack];",
+          "146": "}",
+          "147": null,
+          "148": "return $pipe->{$this->method}(...$parameters);",
+          "149": "};",
+          "150": "};",
+          "151": "}"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php"
+      }, {
+        "lineNumber": 53,
+        "method": "Illuminate\\Routing\\Pipeline::Illuminate\\Routing\\{closure}",
+        "code": {
+          "50": null,
+          "51": "$callable = $slice($stack, $pipe);",
+          "52": null,
+          "53": "return $callable($passable);",
+          "54": "} catch (Exception $e) {",
+          "55": "return $this->handleException($passable, $e);",
+          "56": "} catch (Throwable $e) {"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php"
+      }, {
+        "lineNumber": 64,
+        "method": "Illuminate\\Session\\Middleware\\StartSession::handle",
+        "code": {
+          "61": "$this->collectGarbage($session);",
+          "62": "}",
+          "63": null,
+          "64": "$response = $next($request);",
+          "65": null,
+          "66": "\/\/ Again, if the session has been configured we will need to close out the session",
+          "67": "\/\/ so that the attributes may be persisted to some storage medium. We will also"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Session\/Middleware\/StartSession.php"
+      }, {
+        "lineNumber": 148,
+        "method": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}",
+        "code": {
+          "145": "$parameters = [$passable, $stack];",
+          "146": "}",
+          "147": null,
+          "148": "return $pipe->{$this->method}(...$parameters);",
+          "149": "};",
+          "150": "};",
+          "151": "}"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php"
+      }, {
+        "lineNumber": 53,
+        "method": "Illuminate\\Routing\\Pipeline::Illuminate\\Routing\\{closure}",
+        "code": {
+          "50": null,
+          "51": "$callable = $slice($stack, $pipe);",
+          "52": null,
+          "53": "return $callable($passable);",
+          "54": "} catch (Exception $e) {",
+          "55": "return $this->handleException($passable, $e);",
+          "56": "} catch (Throwable $e) {"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php"
+      }, {
+        "lineNumber": 37,
+        "method": "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse::handle",
+        "code": {
+          "34": "*\/",
+          "35": "public function handle($request, Closure $next)",
+          "36": "{",
+          "37": "$response = $next($request);",
+          "38": null,
+          "39": "foreach ($this->cookies->getQueuedCookies() as $cookie) {",
+          "40": "$response->headers->setCookie($cookie);"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Cookie\/Middleware\/AddQueuedCookiesToResponse.php"
+      }, {
+        "lineNumber": 148,
+        "method": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}",
+        "code": {
+          "145": "$parameters = [$passable, $stack];",
+          "146": "}",
+          "147": null,
+          "148": "return $pipe->{$this->method}(...$parameters);",
+          "149": "};",
+          "150": "};",
+          "151": "}"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php"
+      }, {
+        "lineNumber": 53,
+        "method": "Illuminate\\Routing\\Pipeline::Illuminate\\Routing\\{closure}",
+        "code": {
+          "50": null,
+          "51": "$callable = $slice($stack, $pipe);",
+          "52": null,
+          "53": "return $callable($passable);",
+          "54": "} catch (Exception $e) {",
+          "55": "return $this->handleException($passable, $e);",
+          "56": "} catch (Throwable $e) {"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php"
+      }, {
+        "lineNumber": 59,
+        "method": "Illuminate\\Cookie\\Middleware\\EncryptCookies::handle",
+        "code": {
+          "56": "*\/",
+          "57": "public function handle($request, Closure $next)",
+          "58": "{",
+          "59": "return $this->encrypt($next($this->decrypt($request)));",
+          "60": "}",
+          "61": null,
+          "62": "\/**"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Cookie\/Middleware\/EncryptCookies.php"
+      }, {
+        "lineNumber": 148,
+        "method": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}",
+        "code": {
+          "145": "$parameters = [$passable, $stack];",
+          "146": "}",
+          "147": null,
+          "148": "return $pipe->{$this->method}(...$parameters);",
+          "149": "};",
+          "150": "};",
+          "151": "}"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php"
+      }, {
+        "lineNumber": 53,
+        "method": "Illuminate\\Routing\\Pipeline::Illuminate\\Routing\\{closure}",
+        "code": {
+          "50": null,
+          "51": "$callable = $slice($stack, $pipe);",
+          "52": null,
+          "53": "return $callable($passable);",
+          "54": "} catch (Exception $e) {",
+          "55": "return $this->handleException($passable, $e);",
+          "56": "} catch (Throwable $e) {"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php"
+      }, {
+        "lineNumber": 102,
+        "method": "Illuminate\\Pipeline\\Pipeline::then",
+        "code": {
+          "99": "array_reverse($this->pipes), $this->carry(), $this->prepareDestination($destination)",
+          "100": ");",
+          "101": null,
+          "102": "return $pipeline($this->passable);",
+          "103": "}",
+          "104": null,
+          "105": "\/**"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php"
+      }, {
+        "lineNumber": 561,
+        "method": "Illuminate\\Routing\\Router::runRouteWithinStack",
+        "code": {
+          "558": "return $this->prepareResponse(",
+          "559": "$request, $route->run()",
+          "560": ");",
+          "561": "});",
+          "562": "}",
+          "563": null,
+          "564": "\/**"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php"
+      }, {
+        "lineNumber": 520,
+        "method": "Illuminate\\Routing\\Router::dispatchToRoute",
+        "code": {
+          "517": null,
+          "518": "$this->events->dispatch(new Events\\RouteMatched($route, $request));",
+          "519": null,
+          "520": "$response = $this->runRouteWithinStack($route, $request);",
+          "521": null,
+          "522": "return $this->prepareResponse($request, $response);",
+          "523": "}"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php"
+      }, {
+        "lineNumber": 498,
+        "method": "Illuminate\\Routing\\Router::dispatch",
+        "code": {
+          "495": "{",
+          "496": "$this->currentRequest = $request;",
+          "497": null,
+          "498": "return $this->dispatchToRoute($request);",
+          "499": "}",
+          "500": null,
+          "501": "\/**"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php"
+      }, {
+        "lineNumber": 174,
+        "method": "Illuminate\\Foundation\\Http\\Kernel::Illuminate\\Foundation\\Http\\{closure}",
+        "code": {
+          "171": "return function ($request) {",
+          "172": "$this->app->instance('request', $request);",
+          "173": null,
+          "174": "return $this->router->dispatch($request);",
+          "175": "};",
+          "176": "}",
+          "177": null
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php"
+      }, {
+        "lineNumber": 30,
+        "method": "Illuminate\\Routing\\Pipeline::Illuminate\\Routing\\{closure}",
+        "code": {
+          "27": "{",
+          "28": "return function ($passable) use ($destination) {",
+          "29": "try {",
+          "30": "return $destination($passable);",
+          "31": "} catch (Exception $e) {",
+          "32": "return $this->handleException($passable, $e);",
+          "33": "} catch (Throwable $e) {"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php"
+      }, {
+        "lineNumber": 30,
+        "method": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest::handle",
+        "code": {
+          "27": null,
+          "28": "$this->clean($request);",
+          "29": null,
+          "30": "return $next($request);",
+          "31": "}",
+          "32": null,
+          "33": "\/**"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php"
+      }, {
+        "lineNumber": 148,
+        "method": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}",
+        "code": {
+          "145": "$parameters = [$passable, $stack];",
+          "146": "}",
+          "147": null,
+          "148": "return $pipe->{$this->method}(...$parameters);",
+          "149": "};",
+          "150": "};",
+          "151": "}"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php"
+      }, {
+        "lineNumber": 53,
+        "method": "Illuminate\\Routing\\Pipeline::Illuminate\\Routing\\{closure}",
+        "code": {
+          "50": null,
+          "51": "$callable = $slice($stack, $pipe);",
+          "52": null,
+          "53": "return $callable($passable);",
+          "54": "} catch (Exception $e) {",
+          "55": "return $this->handleException($passable, $e);",
+          "56": "} catch (Throwable $e) {"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php"
+      }, {
+        "lineNumber": 30,
+        "method": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest::handle",
+        "code": {
+          "27": null,
+          "28": "$this->clean($request);",
+          "29": null,
+          "30": "return $next($request);",
+          "31": "}",
+          "32": null,
+          "33": "\/**"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php"
+      }, {
+        "lineNumber": 148,
+        "method": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}",
+        "code": {
+          "145": "$parameters = [$passable, $stack];",
+          "146": "}",
+          "147": null,
+          "148": "return $pipe->{$this->method}(...$parameters);",
+          "149": "};",
+          "150": "};",
+          "151": "}"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php"
+      }, {
+        "lineNumber": 53,
+        "method": "Illuminate\\Routing\\Pipeline::Illuminate\\Routing\\{closure}",
+        "code": {
+          "50": null,
+          "51": "$callable = $slice($stack, $pipe);",
+          "52": null,
+          "53": "return $callable($passable);",
+          "54": "} catch (Exception $e) {",
+          "55": "return $this->handleException($passable, $e);",
+          "56": "} catch (Throwable $e) {"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php"
+      }, {
+        "lineNumber": 27,
+        "method": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize::handle",
+        "code": {
+          "24": "throw new PostTooLargeException;",
+          "25": "}",
+          "26": null,
+          "27": "return $next($request);",
+          "28": "}",
+          "29": null,
+          "30": "\/**"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ValidatePostSize.php"
+      }, {
+        "lineNumber": 148,
+        "method": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}",
+        "code": {
+          "145": "$parameters = [$passable, $stack];",
+          "146": "}",
+          "147": null,
+          "148": "return $pipe->{$this->method}(...$parameters);",
+          "149": "};",
+          "150": "};",
+          "151": "}"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php"
+      }, {
+        "lineNumber": 53,
+        "method": "Illuminate\\Routing\\Pipeline::Illuminate\\Routing\\{closure}",
+        "code": {
+          "50": null,
+          "51": "$callable = $slice($stack, $pipe);",
+          "52": null,
+          "53": "return $callable($passable);",
+          "54": "} catch (Exception $e) {",
+          "55": "return $this->handleException($passable, $e);",
+          "56": "} catch (Throwable $e) {"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php"
+      }, {
+        "lineNumber": 46,
+        "method": "Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode::handle",
+        "code": {
+          "43": "throw new MaintenanceModeException($data['time'], $data['retry'], $data['message']);",
+          "44": "}",
+          "45": null,
+          "46": "return $next($request);",
+          "47": "}",
+          "48": "}",
+          "49": null
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/CheckForMaintenanceMode.php"
+      }, {
+        "lineNumber": 148,
+        "method": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}",
+        "code": {
+          "145": "$parameters = [$passable, $stack];",
+          "146": "}",
+          "147": null,
+          "148": "return $pipe->{$this->method}(...$parameters);",
+          "149": "};",
+          "150": "};",
+          "151": "}"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php"
+      }, {
+        "lineNumber": 53,
+        "method": "Illuminate\\Routing\\Pipeline::Illuminate\\Routing\\{closure}",
+        "code": {
+          "50": null,
+          "51": "$callable = $slice($stack, $pipe);",
+          "52": null,
+          "53": "return $callable($passable);",
+          "54": "} catch (Exception $e) {",
+          "55": "return $this->handleException($passable, $e);",
+          "56": "} catch (Throwable $e) {"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php"
+      }, {
+        "lineNumber": 102,
+        "method": "Illuminate\\Pipeline\\Pipeline::then",
+        "code": {
+          "99": "array_reverse($this->pipes), $this->carry(), $this->prepareDestination($destination)",
+          "100": ");",
+          "101": null,
+          "102": "return $pipeline($this->passable);",
+          "103": "}",
+          "104": null,
+          "105": "\/**"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php"
+      }, {
+        "lineNumber": 149,
+        "method": "Illuminate\\Foundation\\Http\\Kernel::sendRequestThroughRouter",
+        "code": {
+          "146": "return (new Pipeline($this->app))",
+          "147": "->send($request)",
+          "148": "->through($this->app->shouldSkipMiddleware() ? [] : $this->middleware)",
+          "149": "->then($this->dispatchToRouter());",
+          "150": "}",
+          "151": null,
+          "152": "\/**"
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php"
+      }, {
+        "lineNumber": 116,
+        "method": "Illuminate\\Foundation\\Http\\Kernel::handle",
+        "code": {
+          "113": "try {",
+          "114": "$request->enableHttpMethodParameterOverride();",
+          "115": null,
+          "116": "$response = $this->sendRequestThroughRouter($request);",
+          "117": "} catch (Exception $e) {",
+          "118": "$this->reportException($e);",
+          "119": null
+        },
+        "inProject": false,
+        "file": "vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php"
+      }, {
+        "lineNumber": 53,
+        "method": "[main]",
+        "code": {
+          "50": "$kernel = $app->make(Illuminate\\Contracts\\Http\\Kernel::class);",
+          "51": null,
+          "52": "$response = $kernel->handle(",
+          "53": "$request = Illuminate\\Http\\Request::capture()",
+          "54": ");",
+          "55": null,
+          "56": "$response->send();"
+        },
+        "inProject": false,
+        "file": "public\/index.php"
+      }]
+    }],
+    "breadcrumbs": [],
+    "metaData": {
+      "request": {
+        "url": "http:\/\/bugger.servermade.app",
+        "httpMethod": "GET",
+        "params": [],
+        "clientIp": "192.168.10.1",
+        "userAgent": "Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/59.0.3071.61 Safari\/537.36",
+        "headers": {
+          "cookie": ["XSRF-TOKEN=eyJpdiI6IlNGVU1MTVcrR2RcL1pUQTcrQU1pbVBBPT0iLCJ2YWx1ZSI6IjBRXC83RE0xWDhvZll3QXJRSmdMTUdDRlNtSVE4blFvV0tSbXBcL3U4TThFejFtUnFYS1g5ZW9BUU9sY29weGg3V1wvN3BJdmoxS2ZHd3M5K0pcL0s5RzVXUT09IiwibWFjIjoiMTgzNGQ3NzFhYmQ0YjRiNWFiZDRmZmY3YzZkMWFlOTYzOWZkZjJiZGUwNTQwODk5NmQzMGE1ZTI1YWQ0MjI0YiJ9; laravel_session=eyJpdiI6InpDb0JsZkt5SGxHRTFXNzl6Q1htT3c9PSIsInZhbHVlIjoiZWF2WXpZVEJOTzBxOXVYZ1ZFSVZnTkJObm5nVnFVUXh2ZE1pY0o5cDBPSVZXSlYrYU14WUJZQXRjYTFxeGFtTUlCTkpFM2VsMkdxbVlLQjJZTnpcL0hnPT0iLCJtYWMiOiI2ZmZjZDcwMjU0YTc1NjZiYjRiOGY5NDQ3NjRjNzEwMTU4MzM1YWI1ZjcyNGRhYzk5ZDI5NDdmMjY0NmY4YTA1In0%3D"],
+          "accept-language": ["en-US,en;q=0.8,it;q=0.6"],
+          "accept-encoding": ["gzip, deflate"],
+          "accept": ["text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8"],
+          "user-agent": ["Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/59.0.3071.61 Safari\/537.36"],
+          "upgrade-insecure-requests": ["1"],
+          "cache-control": ["max-age=0"],
+          "connection": ["keep-alive"],
+          "host": ["bugger.servermade.app"],
+          "content-length": [null],
+          "content-type": [null]
+        }
+      },
+      "cookies": {
+        "XSRF-TOKEN": "gEWA9UKhVDcLZaEIJtwzBpn02oLtq7IjmmD17yc8",
+        "laravel_session": "YZguK04mTZDxe39ZmZ6nqYpwNenSsMPn02GcwYmL"
+      },
+      "session": {
+        "_token": "gEWA9UKhVDcLZaEIJtwzBpn02oLtq7IjmmD17yc8",
+        "_previous": {
+          "url": "http:\/\/bugger.servermade.app"
+        },
+        "_flash": {
+          "old": [],
+          "new": []
+        }
+      }
+    }
+  }]
+}

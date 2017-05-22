@@ -19,6 +19,16 @@ class User extends Authenticatable
     ];
 
     /**
+     * Retrieves the Applications owned by this user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function applications()
+    {
+        return $this->hasMany(Application::class);
+    }
+
+    /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
