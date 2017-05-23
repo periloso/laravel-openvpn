@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Application;
+use App\Models\Application;
 use Illuminate\Http\Request;
 
 class ApplicationController extends Controller
@@ -14,7 +14,7 @@ class ApplicationController extends Controller
      */
     public function index()
     {
-        //
+        return Application::get();
     }
 
     /**
@@ -35,24 +35,25 @@ class ApplicationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $application = Application::create($request);
+        return $application;
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Application  $application
+     * @param  \App\Models\Application  $application
      * @return \Illuminate\Http\Response
      */
     public function show(Application $application)
     {
-        //
+        return $application;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Application  $application
+     * @param  \App\Models\Application  $application
      * @return \Illuminate\Http\Response
      */
     public function edit(Application $application)
@@ -64,22 +65,23 @@ class ApplicationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Application  $application
+     * @param  \App\Models\Application  $application
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Application $application)
     {
-        //
+        $application->update($request->all());
+        return $application;
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Application  $application
+     * @param  \App\Models\Application  $application
      * @return \Illuminate\Http\Response
      */
     public function destroy(Application $application)
     {
-        //
+        $application->delete();
     }
 }

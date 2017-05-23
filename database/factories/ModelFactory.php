@@ -25,7 +25,7 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Models\ApiKey::class, function (Faker\Generator $faker) {
     return [
-        'key' => md5($faker->randomAscii),
+        'key' => $uuid4 = $faker->uuid,
     ];
 });
 

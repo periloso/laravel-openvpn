@@ -17,6 +17,8 @@ class CreateLoggedEventsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('application_id');
             $table->foreign('application_id')->references('id')->on('applications')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('severity')->nullable();
+            $table->json('app')->nullable();
             $table->json('exceptions')->nullable();
             $table->json('device')->nullable();
             $table->json('breadcrumbs')->nullable();

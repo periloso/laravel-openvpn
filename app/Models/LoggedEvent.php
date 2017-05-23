@@ -18,6 +18,7 @@ class LoggedEvent extends Model
         'metadata' => 'array',
         'context' => 'array',
         'user' => 'array',
+        'type' => 'array',
     ];
 
     /**

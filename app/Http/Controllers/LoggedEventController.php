@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\LoggedEvent;
+use App\Models\LoggedEvent;
 use Illuminate\Http\Request;
 
 class LoggedEventController extends Controller
@@ -14,7 +14,7 @@ class LoggedEventController extends Controller
      */
     public function index()
     {
-        //
+        return LoggedEvent::with('application')->get()->makeHidden('application_id');
     }
 
     /**
@@ -35,24 +35,26 @@ class LoggedEventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $loggedEvent = LoggedEvent::create($request->all());
+        return $loggedEvent->makeHidden('application_id');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\LoggedEvent  $loggedEvent
+     * @param  \App\Models\LoggedEvent  $loggedEvent
      * @return \Illuminate\Http\Response
      */
     public function show(LoggedEvent $loggedEvent)
     {
-        //
+        $loggedEvent = LoggedEvent::with('application')->find($loggedEvent->id)->makeHidden('application_id');
+        return $loggedEvent;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\LoggedEvent  $loggedEvent
+     * @param  \App\Models\LoggedEvent  $loggedEvent
      * @return \Illuminate\Http\Response
      */
     public function edit(LoggedEvent $loggedEvent)
@@ -64,22 +66,24 @@ class LoggedEventController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\LoggedEvent  $loggedEvent
+     * @param  \App\Models\LoggedEvent  $loggedEvent
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, LoggedEvent $loggedEvent)
     {
-        //
+        $loggedEvent->update($request->all());
+        $loggedEvent = LoggedEvent::with('application')->find($loggedEvent->id)->makeHidden('application_id');
+        return $loggedEvent;
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\LoggedEvent  $loggedEvent
+     * @param  \App\Models\LoggedEvent  $loggedEvent
      * @return \Illuminate\Http\Response
      */
     public function destroy(LoggedEvent $loggedEvent)
     {
-        //
+        $loggedEvent->delete();
     }
 }

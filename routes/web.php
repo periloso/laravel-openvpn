@@ -20,3 +20,7 @@ Route::post('/logger', 'LoggingController@store');
 //Route::any('/logger', function(\Illuminate\Http\Request $request) {
 //    \Log::info(json_encode($request->all()));
 //});
+
+Route::resource('/applications', 'ApplicationController');
+Route::resource('/apiKeys', 'ApiKeyController');
+Route::resource('/loggedEvents', 'LoggedEventController');

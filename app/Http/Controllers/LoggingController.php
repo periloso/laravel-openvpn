@@ -18,14 +18,16 @@ class LoggingController extends Controller
     {
         $application = ApiKey::where('key', $request->get('apiKey'))->with('application')->firstOrFail()->application;
         $loggedEvent = LoggedEvent::create([
-            'application' => $application,
-            'release_stage' => $request->get('events')[0]->app->releaseStage,
-            'device' => $request->get('events')[0]->device,
-            'user' => $request->get('events')[0]->user,
-            'context' => $request->get('events')[0]->context,
-            'severity' => $request->get('events')[0]->severity,
-            'exceptions' => $request->get('events')[0]->exceptions,
+            'app' => $request->get('events')[0]['app'],
+            'application_id' => $application->id,
+            'device' => $request->get('events')[0]['device'],
+            'user' => $request->get('events')[0]['user'],
+            'context' => $request->get('events')[0]['context'],
+            'severity' => $request->get('events')[0]['severity'],
+            'exceptions' => $request->get('events')[0]['exceptions'],
         ]);
+
+        \Log::info($loggedEvent);
 
         return $loggedEvent;
     }

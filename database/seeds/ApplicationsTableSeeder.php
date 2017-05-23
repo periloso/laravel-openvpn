@@ -13,8 +13,10 @@ class ApplicationsTableSeeder extends Seeder
      */
     public function run()
     {
-        Application::create([
+        $user = \App\Models\User::first();
+        $application = Application::create([
             'name' => 'bugger',
+            'user_id' => $user->id,
         ]);
     }
 }
